@@ -1,6 +1,6 @@
 import { getDefaultConfig } from "@rainbow-me/rainbowkit";
-import { http, type Chain } from "wagmi";
-import { defineChain } from "viem";
+import { http } from "wagmi";
+import { defineChain, type Chain } from "viem";
 import config from "../config";
 
 // 定义本地链
