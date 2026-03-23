@@ -274,7 +274,7 @@ const AiExperienceProject: React.FC = () => {
     return (
         <section className="ai-experience-section">
             <div className="ai-experience-container">
-                <h2 className="ai-experience-title">{translate("AI 体验项目", "AI EXPERIENCE PROJECT")}</h2>
+                <h2 className="ai-experience-title">{translate("AI 体验项目", "AI EXPERIMENT PROJECT")}</h2>
 
                 {/* Banner */}
                 <div className="contribution-banner">

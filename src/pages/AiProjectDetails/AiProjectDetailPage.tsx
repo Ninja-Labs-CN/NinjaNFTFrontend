@@ -702,7 +702,7 @@ const AiProjectDetailPage: React.FC = () => {
                         </div>
 
                         <div className="sidebar-widget">
-                            <h4 className="widget-title">MORE AI EXPERIENCE PROJECTS</h4>
+                            <h4 className="widget-title">MORE AI EXPERIMENT PROJECTS</h4>
                             <div className="more-projects-list">
                                 {(detailData?.moreProjects || []).map((project) => (
                                     <Link key={project.repo} to={`/ai-project/${project.repo}`} className="more-project-card">
