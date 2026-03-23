@@ -9,10 +9,10 @@ import { useLanguage } from "../context/useLanguage";
 const CityZeroPage: React.FC = () => {
     const { language } = useLanguage();
     const translate = (zh: string, en: string) => (language === "zh" ? zh : en);
-    const announcementText = translate(
-        "进行中：City Zero 建设，预告：AI 前沿训练营",
-        "Ongoing: City Zero Construction, Upcoming: AI Frontier Bootcamp"
-    );
+    const announcements = [
+        translate("City Zero 建设", "City Zero Construction"),
+        translate("AI 前沿训练营", "AI Frontier Bootcamp"),
+    ];
 
     return (
         <div className="city-zero-page">
@@ -20,14 +20,11 @@ const CityZeroPage: React.FC = () => {
             <section className="hero-section">
                 <div className="scrolling-announcements">
                     <div className={`scrolling-text ${language === "zh" ? "scrolling-text-zh" : ""}`}>
-                        <span className="text-color-1">&lt;&lt;&lt;&lt; {announcementText}</span>
-                        <span className="text-color-2">&lt;&lt;&lt; {announcementText}</span>
-                        <span className="text-color-3">{announcementText}</span>
-                        <span className="text-color-4">&lt;&lt;&lt; {announcementText}</span>
-                        <span className="text-color-1">&lt;&lt;&lt;&lt; {announcementText}</span>
-                        <span className="text-color-2">&lt;&lt;&lt; {announcementText}</span>
-                        <span className="text-color-3">{announcementText}</span>
-                        <span className="text-color-4">&lt;&lt;&lt; {announcementText}</span>
+                        {[...announcements, ...announcements].map((text, index) => (
+                            <span key={`${text}-${index}`} className={index % 2 === 0 ? "text-color-1" : "text-color-2"}>
+                                {text}
+                            </span>
+                        ))}
                     </div>
                 </div>
                 <div className="hero-image-container">
