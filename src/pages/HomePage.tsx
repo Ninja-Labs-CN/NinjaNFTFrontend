@@ -8,11 +8,11 @@ import { evmContractService } from "../utils/evmContract";
 import "./HomePage.css";
 
 interface HomePageProps {
-  isConnected: boolean;
-  address: string;
+  isConnected?: boolean;
+  address?: string;
 }
 
-function HomePage({ isConnected, address }: HomePageProps) {
+function HomePage({ isConnected = false, address = "" }: HomePageProps) {
   void isConnected;
   void address;
   const { language } = useLanguage();
